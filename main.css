@@ -1,0 +1,232 @@
+// Hues -----------------------------------
+@syntax-uno:    223;
+@syntax-duo:    35;
+
+
+// Language colors -----------------------------------
+
+// Uno hue
+@uno-1: hsl(@syntax-uno, 100%, 93%);
+@uno-2: hsl(@syntax-uno,  98%, 86%);
+@uno-3: hsl(@syntax-uno,  96%, 78%);
+@uno-4: hsl(@syntax-uno,  12%, 70%);
+@uno-5: hsl(@syntax-uno,  12%, 46%);
+
+// Duo hue
+@duo-1: hsl(@syntax-duo, 100%, 80%);
+@duo-2: hsl(@syntax-duo,  72%, 62%);
+@duo-3: hsl(@syntax-duo,   6%, 46%);
+
+// Base colors -----------------------------------
+@syntax-fg:     @uno-1;
+@syntax-bg:     hsl(@syntax-uno, 14%, 18%);
+@syntax-guide:  lighten(@syntax-bg, 9%);
+@syntax-accent: hsl(@syntax-duo, 100%, 66%);
+
+// Official Syntax Variables -----------------------------------
+
+// General colors
+@syntax-text-color:            @syntax-fg;
+@syntax-cursor-color:          @syntax-accent;
+@syntax-selection-color:       lighten(@syntax-background-color, 12%);
+@syntax-selection-flash-color: @syntax-accent;
+@syntax-background-color:      @syntax-bg;
+@syntax-comments-color:        @uno-5;
+
+// Guide colors
+@syntax-wrap-guide-color:          @syntax-guide;
+@syntax-indent-guide-color:        @syntax-guide;
+@syntax-invisible-character-color: @syntax-guide;
+
+// For find and replace markers
+@syntax-result-marker-color:          @syntax-text-color;
+@syntax-result-marker-color-selected: @syntax-accent;
+
+// Gutter colors
+@syntax-gutter-text-color:                @uno-5;
+@syntax-gutter-text-color-selected:       @uno-3;
+@syntax-gutter-background-color:          @syntax-bg;
+@syntax-gutter-background-color-selected: lighten(@syntax-background-color, 3%);
+
+// For git diff info. i.e. in the gutter
+@syntax-color-renamed:  hsl(208, 100%, 60%);
+@syntax-color-added:    hsl(150,  60%, 54%);
+@syntax-color-modified: hsl(40,   60%, 70%);
+@syntax-color-removed:  hsl(0,    70%, 60%);
+
+
+// Custom Syntax Variables -----------------------------------
+
+@syntax-cursor-line: fade(@syntax-selection-color, 26%);
+
+/* General */
+
+span.cm-header      { color: @uno-1; }
+span.cm-variable	  { color: @uno-1; }
+span.cm-variable-2	{ color: @uno-1; }
+span.cm-variable-3	{ color: @uno-1; }
+span.cm-link		    { color: @duo-1; }
+span.cm-string-2    { color: @duo-1; }
+span.cm-meta		    { color: @uno-1; }
+span.cm-comment		  { color: @syntax-comments-color; }
+span.cm-error		    { color: red; }
+
+/* CSS, LESS */
+
+.cm-m-css.cm-tag { color: @uno-1; }
+.cm-m-css.cm-def { color: @uno-2; }
+.cm-m-css.cm-property { color: @uno-3; }
+.cm-m-css.cm-number { color: @duo-1; }
+.cm-m-css.cm-atom { color: @duo-1; }
+.cm-m-css.cm-string { color: @duo-2; }
+.cm-m-css.cm-builtin { color: @duo-1; }
+.cm-m-css.cm-qualifier { color: @duo-1; }
+.cm-m-css.cm-variable { color: @duo-1; }
+.cm-m-css.cm-attribute { color: @duo-1; }
+.cm-m-css.cm-keyword { color: @duo-2; }
+
+/* HTML, XML */
+
+.cm-m-xml.cm-tag.cm-bracket { color: @uno-1; }
+.cm-m-xml.cm-tag { color: @uno-1; }
+.cm-m-xml.cm-attribute { color: @uno-3; }
+.cm-m-xml.cm-string { color: @duo-1; }
+
+/* Javascript */
+
+.cm-m-javascript.cm-keyword { color: @duo-1; }
+.cm-m-javascript.cm-def { color: @uno-3; }
+.cm-m-javascript.cm-operator { color: @duo-2; }
+.cm-m-javascript.cm-string { color: @duo-1; }
+.cm-m-javascript.cm-number { color: @duo-1; }
+.cm-m-javascript.cm-variable-2 { color: @uno-1; }
+.cm-m-javascript.cm-property { color: @uno-2; }
+.cm-m-javascript.cm-atom { color: @duo-1; }
+
+/* PHP */
+
+.cm-m-clike.cm-keyword { color: #C678DD; }
+.cm-m-clike.cm-def { color: #D19A66; }
+.cm-m-clike.cm-variable-2 { color: #D86C74; }
+.cm-m-clike.cm-operator { color: #ABB2BF; }
+.cm-m-clike.cm-string { color: #98C379; }
+.cm-m-clike.cm-atom { color: #64B6C3; }
+.cm-m-clike.cm-number { color: #D19A66; }
+.cm-m-clike.cm-builtin { color: #6CAFF2; }
+
+/* Editor */
+
+.CodeMirror {
+  line-height: 1.4;
+}
+
+.CodeMirror-scroll {
+  background: @syntax-background-color;
+  color: @syntax-text-color;
+}
+
+.CodeMirror-cursor {
+  border-left: 2px solid @syntax-cursor-color !important;
+}
+
+.CodeMirror-overwrite .CodeMirror-cursor {
+  border-bottom: 1px solid @duo-1 !important;
+  border-left: none !important;
+}
+
+.CodeMirror-gutters {
+  background: @syntax-gutter-background-color !important;
+  border-right: none;
+}
+
+.CodeMirror-gutter-filler,
+.CodeMirror-scrollbar-filler {
+  background-image: none !important;
+  background-color: @syntax-gutter-background-color !important;
+}
+
+.CodeMirror-foldmarker {
+  border: 1px solid darken(@uno-5, 20%);
+  background-color: darken(@uno-5, 20%);
+}
+
+.CodeMirror-linenumber {
+  color: darken(@syntax-gutter-text-color, 10%);
+}
+
+.CodeMirror-selected {
+  background: @syntax-selection-color !important;
+}
+
+/* Matching */
+
+.CodeMirror-matchingbracket {
+  background: transparent !important;
+  border-bottom: 1px solid @duo-1 !important;
+  color: @uno-1 !important;
+}
+
+.CodeMirror-matchingtag {
+  background: darken(@uno-5, 15%) !important;
+}
+
+/* Active Line */
+
+.CodeMirror-focused .CodeMirror-activeline .CodeMirror-nonmatchingbracket {
+  color: #ff0076 !important;
+}
+
+.CodeMirror-activeline-background {
+  background: @syntax-cursor-line !important;
+}
+
+.CodeMirror-focused .CodeMirror-activeline .CodeMirror-gutter-elt {
+  color: @uno-2;
+  background-color: @syntax-cursor-line;
+}
+
+.CodeMirror-focused .CodeMirror-activeline .inline-widget .CodeMirror-gutter-elt {
+  color: @uno-2;
+}
+
+/* Non-editor styling */
+
+#image-holder,
+#not-editor {
+  background-color: #282C34;
+}
+
+#image-holder {
+  color: #282C34;
+}
+
+/* Inline editor */
+.inline-text-editor,
+.inline-widget .CodeMirror-scroll .CodeMirror-linenumbers,
+.inline-text-editor .CodeMirror-gutter-elt {
+	background-color: @syntax-background-color !important;
+}
+.inline-text-editor .CodeMirror-linebackground,
+.inline-text-editor .CodeMirror-activeline,
+.inline-text-editor .CodeMirror-activeline .CodeMirror-gutter-elt {
+	background-color: @syntax-background-color !important;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  background-color: @syntax-background-color !important;
+  height: 10px;
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  box-shadow: 0 0 0 12px darken(@uno-5, 15%) inset !important;
+  border-radius: 0px;
+  width: 10px;
+  min-height: 25px;
+}
+::-webkit-scrollbar-thumb:hover {
+  box-shadow: 0 0 0 12px darken(@uno-5, 20%) inset !important;
+}
+::-webkit-scrollbar-thumb:active {
+  box-shadow: 0 0 0 12px darken(@uno-5, 20%) inset !important;
+}
