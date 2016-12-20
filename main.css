@@ -247,8 +247,12 @@ span.cm-error		    { color: red; }
 #project-files-container:hover,
 .working-set-header,
 .working-set-header-title,
-#project-files-header .btn-alt-quiet {
-  background: hsl(223, 14%, 17%) !important;
+#project-files-header .btn-alt-quiet,
+#main-toolbar,
+#status-bar,
+#status-indicators,
+.bottom-panel .toolbar {
+  background: hsl(223, 12%, 17%) !important;
 }
 
 .working-set-header,
@@ -262,20 +266,13 @@ span.cm-error		    { color: red; }
   background: hsl(223, 14%, 20%) !important;
 }
 
-#main-toolbar,
-#status-bar,
-#status-indicators,
-.bottom-panel .toolbar {
-  background: hsl(223, 14%, 17%) !important;
-}
-
 .bottom-panel {
   background: hsl(223, 14%, 19%) !important;
   border-top: 1px solid hsl(223, 14%, 14%) !important;
 }
 
 .bottom-panel .toolbar {
-  background: hsl(223, 14%, 17%) !important;
+  background: hsl(223, 12%, 17%) !important;
 }
 
 #main-toolbar {
