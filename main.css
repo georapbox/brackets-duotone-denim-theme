@@ -1,31 +1,31 @@
-// Hues -----------------------------------
+/* Hues ----------------------------------- */
 @syntax-uno:    223;
 @syntax-duo:    35;
 
 
-// Language colors -----------------------------------
+/* Language colors ----------------------------------- */
 
-// Uno hue
+/* Uno hue */
 @uno-1: hsl(@syntax-uno, 100%, 93%);
 @uno-2: hsl(@syntax-uno,  98%, 86%);
 @uno-3: hsl(@syntax-uno,  96%, 78%);
 @uno-4: hsl(@syntax-uno,  12%, 70%);
 @uno-5: hsl(@syntax-uno,  12%, 46%);
 
-// Duo hue
+/* Duo hue */
 @duo-1: hsl(@syntax-duo, 100%, 80%);
 @duo-2: hsl(@syntax-duo,  72%, 62%);
 @duo-3: hsl(@syntax-duo,   6%, 46%);
 
-// Base colors -----------------------------------
+/* Base colors ----------------------------------- */
 @syntax-fg:     @uno-1;
-@syntax-bg:     hsl(@syntax-uno, 14%, 18%);
+@syntax-bg:     hsl(@syntax-uno, 14%, 19%);
 @syntax-guide:  lighten(@syntax-bg, 9%);
 @syntax-accent: hsl(@syntax-duo, 100%, 66%);
 
-// Official Syntax Variables -----------------------------------
+/* Syntax Variables ----------------------------------- */
 
-// General colors
+/* General colors */
 @syntax-text-color:            @syntax-fg;
 @syntax-cursor-color:          @syntax-accent;
 @syntax-selection-color:       lighten(@syntax-background-color, 12%);
@@ -33,29 +33,28 @@
 @syntax-background-color:      @syntax-bg;
 @syntax-comments-color:        @uno-5;
 
-// Guide colors
+/* Guide colors */
 @syntax-wrap-guide-color:          @syntax-guide;
 @syntax-indent-guide-color:        @syntax-guide;
 @syntax-invisible-character-color: @syntax-guide;
 
-// For find and replace markers
+/* For find and replace markers */
 @syntax-result-marker-color:          @syntax-text-color;
 @syntax-result-marker-color-selected: @syntax-accent;
 
-// Gutter colors
+/* Gutter colors */
 @syntax-gutter-text-color:                @uno-5;
 @syntax-gutter-text-color-selected:       @uno-3;
 @syntax-gutter-background-color:          @syntax-bg;
 @syntax-gutter-background-color-selected: lighten(@syntax-background-color, 3%);
 
-// For git diff info. i.e. in the gutter
 @syntax-color-renamed:  hsl(208, 100%, 60%);
 @syntax-color-added:    hsl(150,  60%, 54%);
 @syntax-color-modified: hsl(40,   60%, 70%);
 @syntax-color-removed:  hsl(0,    70%, 60%);
 
 
-// Custom Syntax Variables -----------------------------------
+/* Custom Syntax Variables ----------------------------------- */
 
 @syntax-cursor-line: fade(@syntax-selection-color, 26%);
 
@@ -105,14 +104,14 @@ span.cm-error		    { color: red; }
 
 /* PHP */
 
-.cm-m-clike.cm-keyword { color: #C678DD; }
-.cm-m-clike.cm-def { color: #D19A66; }
-.cm-m-clike.cm-variable-2 { color: #D86C74; }
-.cm-m-clike.cm-operator { color: #ABB2BF; }
-.cm-m-clike.cm-string { color: #98C379; }
-.cm-m-clike.cm-atom { color: #64B6C3; }
-.cm-m-clike.cm-number { color: #D19A66; }
-.cm-m-clike.cm-builtin { color: #6CAFF2; }
+.cm-m-clike.cm-keyword { color: @duo-1; }
+.cm-m-clike.cm-def { color: @uno-3; }
+.cm-m-clike.cm-variable-2 { color: @uno-1; }
+.cm-m-clike.cm-operator { color: @duo-2; }
+.cm-m-clike.cm-string { color: @duo-1; }
+.cm-m-clike.cm-atom { color: @duo-1; }
+.cm-m-clike.cm-number { color: @duo-1; }
+.cm-m-clike.cm-builtin { color: @duo-1; }
 
 /* Editor */
 
@@ -219,14 +218,79 @@ span.cm-error		    { color: red; }
   width: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  box-shadow: 0 0 0 12px darken(@uno-5, 15%) inset !important;
+  box-shadow: 0 0 0 12px darken(@uno-5, 20%) inset !important;
   border-radius: 0px;
   width: 10px;
   min-height: 25px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  box-shadow: 0 0 0 12px darken(@uno-5, 20%) inset !important;
+  box-shadow: 0 0 0 12px darken(@uno-5, 22%) inset !important;
 }
 ::-webkit-scrollbar-thumb:active {
-  box-shadow: 0 0 0 12px darken(@uno-5, 20%) inset !important;
+  box-shadow: 0 0 0 12px darken(@uno-5, 22%) inset !important;
+}
+
+/**
+ * Extensions
+ * ==========
+ */
+
+/* Brackets UI Theming Enabler - https://github.com/notasz/brackets-uitheming */
+
+.sidebar,
+.sidebar-selection, 
+.filetree-selection,
+.sidebar-selection-extension, 
+.filetree-selection-extension,
+.open-files-container,
+.open-files-container:hover,
+#project-files-container:hover,
+.working-set-header,
+.working-set-header-title,
+#project-files-header .btn-alt-quiet {
+  background: hsl(223, 14%, 17%) !important;
+}
+
+.working-set-header,
+.working-set-header-title {
+  border-right: none;
+}
+
+.open-files-container .selected,
+.open-files-container .selected a,
+.sidebar-selection-extension.selectionExtension-visible {
+  background: hsl(223, 14%, 20%) !important;
+}
+
+#main-toolbar,
+#status-bar,
+#status-indicators,
+.bottom-panel .toolbar {
+  background: hsl(223, 14%, 17%) !important;
+}
+
+.bottom-panel {
+  background: hsl(223, 14%, 19%) !important;
+  border-top: 1px solid hsl(223, 14%, 14%) !important;
+}
+
+.bottom-panel .toolbar {
+  background: hsl(223, 14%, 17%) !important;
+}
+
+#main-toolbar {
+  border-left: 1px solid hsl(223, 14%, 14%);
+}
+
+#status-bar {
+  border-top: 1px solid hsl(223, 14%, 14%);
+}
+
+.sidebar {
+  border-right: 1px solid hsl(223, 14%, 14%);
+}
+
+.sidebar-selection,
+.sidebar-selection-extension.selectionExtension-visible {
+  border-bottom: 1px solid hsl(223, 14%, 14%) !important;
 }
