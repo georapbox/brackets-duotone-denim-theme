@@ -14,7 +14,7 @@
     "brackets": ">=1.1.0"
   },
   "theme": {
-    "file": "main.css",
+    "file": "main.less",
     "dark": true,
     "addModeClass": true
   }

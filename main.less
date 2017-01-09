@@ -60,58 +60,34 @@
 
 /* General */
 
-span.cm-header      { color: @uno-1; }
-span.cm-variable	  { color: @uno-1; }
-span.cm-variable-2	{ color: @uno-1; }
-span.cm-variable-3	{ color: @uno-1; }
-span.cm-link		    { color: @duo-1; }
-span.cm-string-2    { color: @duo-1; }
-span.cm-meta		    { color: @uno-1; }
-span.cm-comment		  { color: @syntax-comments-color; }
-span.cm-error		    { color: red; }
+.cm-header      { color: @uno-1; }
+.cm-variable    { color: @uno-1; }
+.cm-variable-2  { color: @uno-1; }
+.cm-variable-3  { color: @uno-1; }
+.cm-link        { color: @duo-1; }
+.cm-string      { color: @duo-1; }
+.cm-string-2    { color: @duo-1; }
+.cm-meta        { color: @uno-1; }
+.cm-comment     { color: @syntax-comments-color; }
+.cm-error       { color: @syntax-color-removed; }
+.cm-number      { color: @duo-1; }
+.cm-keyword     { color: @duo-1; }
+.cm-tag         { color: @uno-1; }
+.cm-def         { color: @uno-3; }
+.cm-atom        { color: @duo-1; }
+.cm-property    { color: @uno-3; }
+.cm-builtin     { color: @duo-1; }
 
 /* CSS, LESS */
-
-.cm-m-css.cm-tag { color: @uno-1; }
-.cm-m-css.cm-def { color: @uno-2; }
-.cm-m-css.cm-property { color: @uno-3; }
-.cm-m-css.cm-number { color: @duo-1; }
-.cm-m-css.cm-atom { color: @duo-1; }
-.cm-m-css.cm-string { color: @duo-2; }
-.cm-m-css.cm-builtin { color: @duo-1; }
+.cm-m-css.cm-def       { color: @uno-2; }
 .cm-m-css.cm-qualifier { color: @duo-1; }
-.cm-m-css.cm-variable { color: @duo-1; }
+.cm-m-css.cm-variable  { color: @duo-1; }
 .cm-m-css.cm-attribute { color: @duo-1; }
-.cm-m-css.cm-keyword { color: @duo-2; }
+.cm-m-css.cm-keyword   { color: @duo-2; }
+.cm-operator           { color: @duo-2; }
 
 /* HTML, XML */
-
-.cm-m-xml.cm-tag.cm-bracket { color: @uno-1; }
-.cm-m-xml.cm-tag { color: @uno-1; }
-.cm-m-xml.cm-attribute { color: @uno-3; }
-.cm-m-xml.cm-string { color: @duo-1; }
-
-/* Javascript */
-
-.cm-m-javascript.cm-keyword { color: @duo-1; }
-.cm-m-javascript.cm-def { color: @uno-3; }
-.cm-m-javascript.cm-operator { color: @duo-2; }
-.cm-m-javascript.cm-string { color: @duo-1; }
-.cm-m-javascript.cm-number { color: @duo-1; }
-.cm-m-javascript.cm-variable-2 { color: @uno-1; }
-.cm-m-javascript.cm-property { color: @uno-2; }
-.cm-m-javascript.cm-atom { color: @duo-1; }
-
-/* PHP */
-
-.cm-m-clike.cm-keyword { color: @duo-1; }
-.cm-m-clike.cm-def { color: @uno-3; }
-.cm-m-clike.cm-variable-2 { color: @uno-1; }
-.cm-m-clike.cm-operator { color: @duo-2; }
-.cm-m-clike.cm-string { color: @duo-1; }
-.cm-m-clike.cm-atom { color: @duo-1; }
-.cm-m-clike.cm-number { color: @duo-1; }
-.cm-m-clike.cm-builtin { color: @duo-1; }
+.cm-m-xml.cm-attribute { color: @uno-2; }
 
 /* Editor */
 
@@ -203,12 +179,12 @@ span.cm-error		    { color: red; }
 .inline-text-editor,
 .inline-widget .CodeMirror-scroll .CodeMirror-linenumbers,
 .inline-text-editor .CodeMirror-gutter-elt {
-	background-color: @syntax-background-color !important;
+  background-color: @syntax-background-color !important;
 }
 .inline-text-editor .CodeMirror-linebackground,
 .inline-text-editor .CodeMirror-activeline,
 .inline-text-editor .CodeMirror-activeline .CodeMirror-gutter-elt {
-	background-color: @syntax-background-color !important;
+  background-color: @syntax-background-color !important;
 }
 
 /* Scrollbars */
@@ -238,9 +214,9 @@ span.cm-error		    { color: red; }
 /* Brackets UI Theming Enabler - https://github.com/notasz/brackets-uitheming */
 
 .sidebar,
-.sidebar-selection, 
+.sidebar-selection,
 .filetree-selection,
-.sidebar-selection-extension, 
+.sidebar-selection-extension,
 .filetree-selection-extension,
 .open-files-container,
 .open-files-container:hover,
